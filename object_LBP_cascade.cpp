@@ -21,22 +21,22 @@ int frame;
 int main(int argc, const char** argv)
 {
  frame=0;
-// prepare video input
+ // prepare video input
  VideoCapture cap("video.avi");
  
-// prepare video output
+ // prepare video output
  VideoWriter outputVideo;
 
 outputVideo.open("video.wmv", CV_FOURCC('W', 'M', 'V', '2'), cap.get(CV_CAP_PROP_FPS), Size(640, 480), true);
 
-// prepare cascadeClassifier
+ // prepare cascadeClassifier
  CascadeClassifier detectorCar;
  CascadeClassifier detectorHuman;
 
-string cascadeName1 = "carLBP.xml";//car
-string cascadeName2 = "humanLBP.xml";//human 
+ string cascadeName1 = "carLBP.xml";//car
+ string cascadeName2 = "humanLBP.xml";//human 
 
-// Load cascade into CascadeClassifier
+ // Load cascade into CascadeClassifier
  bool loaded1 = detectorCar.load(cascadeName1);
  bool loaded2 = detectorHuman.load(cascadeName2);
 
